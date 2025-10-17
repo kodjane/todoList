@@ -1,1 +1,17 @@
-<p-button label="Submit" />
+<div class="card flex justify-content-center">
+  <p-card header="TODO LIST" class="w-6">
+    <div class="todo-container">
+      <input type="text" [(ngModel)]="newTask" placeholder="Enter new task">
+      <button type="button" (click)="addNewTask()">Add</button>
+    </div>
+    <div>
+      <ul>
+        @for (todo of todoList; track $index) {
+          <input type="checkbox" (change)="toggleCompleted($index)" />
+        <li>{{ todo.task }}</li>
+        <button (click)="deleteTask(todo.id)">Delete</button>
+        }
+      </ul>
+    </div>
+  </p-card>
+</div>
