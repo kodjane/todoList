@@ -30,7 +30,7 @@ export class AppComponent {
     console.log(event);
   }
 
-  addNewTask() {
+  addNewTask() : void {
     if(this.newTask.trim() !== '') {
         const newTodotask: TodoTask = {
             id : Date.now(),
@@ -43,11 +43,11 @@ export class AppComponent {
     this.newTask = '';
   }
 
-  toggleCompleted(index: number) {
+  toggleCompleted(index: number) : void {
       this.todoList[index].completed = ! this.todoList[index].completed;
   }
 
-  deleteTask(id : number) {
+  deleteTask(id : number) : void {
     this.todoList = this.todoList.filter(item => item.id !== id)
     console.log(this.todoList)
   }
