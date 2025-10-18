@@ -4,7 +4,7 @@ import { CardModule } from 'primeng/card';
 import { TableModule } from 'primeng/table';
 import { CheckboxModule } from 'primeng/checkbox';
 import { json } from 'stream/consumers';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 
 export interface TodoTask {
   id: number,
@@ -14,7 +14,7 @@ export interface TodoTask {
 
 @Component({
   selector: 'app-root',
-  imports: [CardModule, TableModule, FormsModule, CheckboxModule, CommonModule],
+  imports: [FormsModule, CheckboxModule, CommonModule, NgClass],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
